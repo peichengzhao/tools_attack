@@ -1,0 +1,17 @@
+最基础测试
+"python3 src/evaluate_prompted_agent.py \
+  --setting base \
+  --prompt_type InjecAgent"
+
+
+多轮进化攻击
+  "python src/evaluate_attack_agent.py \
+  --setting base \
+  --prompt_type InjecAgent \
+  --limit 1
+# 全量 544 个 case（耗时较长，每 case 最多 12 次 API：6 轮 × 优化+victim）
+python src/evaluate_attack_agent.py \
+  --setting base \
+  --prompt_type InjecAgent \
+  --use_cache"
+  

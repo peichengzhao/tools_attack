@@ -1,0 +1,19 @@
+"
+model: deepseek-v3.2
+optimizer: deepseek-v4-flash
+实验结果：
+
+"#Test Case": 477,
+"ASR@6 (final)": "98.1",
+"ASR@6-valid (final)": "98.5",
+"ASR@1 (baseline round)": "21.6",
+"Optimized-after-fail": "76.5",
+"Avg Rounds to Success": "2.21",
+"Final Valid Rate": "99.6"
+
+"
+
+
+
+
+
