@@ -1,0 +1,8 @@
+Manifest version: AAAI27-S1-v1
+Canonical JSON: UTF-8 JSON.stringify over the seven fields in fieldOrder, with recursive NFC normalization; no whitespace.
+Stable IDs: official base-file order, 1-based, DS-0001..DS-0544 and DH-0001..DH-0510.
+Target tool: Attacker Tools[0] (the S1 target in the evaluation code).
+Split: sort SHA256(AAAI27-S1-v1|case_id|content_sha256) independently within each attack stratum; 60/20/20 slices.
+Manifest SHA-256: 695ccb17ad3ea55fc6d9e51016605912e91511a9e4187f3497cfa9e3477f051d
+data/test_cases_ds_base.json SHA-256: 4daab35c62a3845e8b9400f4dca58b9c9f37e57cd33b2337552557fbb26282e9
+data/test_cases_dh_base.json SHA-256: 0a8186468d21389af432e8c7b399ae42264d1b93a07b65c7a489468508604305

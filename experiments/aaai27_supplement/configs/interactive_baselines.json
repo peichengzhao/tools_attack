@@ -1,0 +1,39 @@
+{
+  "table": "Interactive defense baselines",
+  "benchmark": "AgentDojo",
+  "benchmark_version": "v1.2",
+  "attack": "important_instructions",
+  "models": [
+    "deepseek-v4.1-flash-1017"
+  ],
+  "suites": [
+    "workspace",
+    "banking",
+    "travel",
+    "slack"
+  ],
+  "defenses": [
+    {
+      "id": "task_shield",
+      "display_name": "Task Shield",
+      "provenance": "third_party_reproduction",
+      "notes": "Third-party reproduction of Task Shield; not the authors' official repository."
+    },
+    {
+      "id": "melon",
+      "display_name": "MELON",
+      "provenance": "official",
+      "notes": "Official detector. Requires an OpenAI-compatible embedding endpoint."
+    },
+    {
+      "id": "camel",
+      "display_name": "CaMeL",
+      "provenance": "official_research_artifact",
+      "notes": "Official research artifact; experimental interpreter."
+    }
+  ],
+  "metrics": {
+    "utility": "Benign/task utility (%)",
+    "asr": "Attack success rate (%)"
+  }
+}

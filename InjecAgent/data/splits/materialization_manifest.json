@@ -1,0 +1,29 @@
+{
+  "manifest_version": "AAAI27-S1-v1",
+  "manifest": "data/splits/split_manifest.csv",
+  "manifest_sha256": "695ccb17ad3ea55fc6d9e51016605912e91511a9e4187f3497cfa9e3477f051d",
+  "counts": {
+    "train": 632,
+    "validation": 211,
+    "test": 211
+  },
+  "by_attack_type": {
+    "data-stealing/test": 109,
+    "data-stealing/train": 326,
+    "data-stealing/validation": 109,
+    "direct-harm/test": 102,
+    "direct-harm/train": 306,
+    "direct-harm/validation": 102
+  },
+  "files": {
+    "train_cases_632.json": "915d8a19f14175e97f7b2900bcc54fc00156ec527ae236c5c63a71538dac374f",
+    "validation_cases_211.json": "3ef173618bfabc6e70c4465e8b9a0d46b7ee618cedf559cd1fdac4047b6be798",
+    "test_cases_211.json": "3b1bbc03b912c4c64e50e624e41805e99ff47d20cbc979684db6a0feb3542a79",
+    "train_cases_ds_326.json": "21779406aef1cc4a5eb352e4d352699ec2330f2341f3108a804faa5f47c33222",
+    "validation_cases_ds_109.json": "274598bd845fe9ab20b5044635d0b9d324daa87285c52028ef68f3d9557a2fbc",
+    "test_cases_ds_109.json": "79487b04669847ed4ea901999ccd21edc0e8288de5b065a5196b97766ea2e120",
+    "train_cases_dh_306.json": "76a645c15138d0cceaa2ecb3dd7b439eac2cd9e6ede1eefe577788bb5385f480",
+    "validation_cases_dh_102.json": "e2674bff3b1ad8fad3d267ea7d4b335e2cf0d39100c03a629dbc97739c284bde",
+    "test_cases_dh_102.json": "faf4d85a9bee7e757420d4550132ceb7f2241ef1ff11f7b48f77ca23fa848d7a"
+  }
+}

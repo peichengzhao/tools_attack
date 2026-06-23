@@ -1,0 +1,258 @@
+{
+  "runs": [
+    {
+      "id": "t1_existing_fixed_denominator",
+      "table": "T1",
+      "enabled": true,
+      "description": "Recompute fixed-denominator metrics from existing per-case results.",
+      "cwd": "{experiment_root}",
+      "command": [
+        "{project_python}",
+        "scripts/analyze_results.py",
+        "--root",
+        "{injecagent_root}/results",
+        "--output-dir",
+        "{repo_root}/results/aaai27_supplement/table1",
+        "--include",
+        "cross_eval/full",
+        "--include",
+        "protect_agent_",
+        "--min-cases",
+        "500"
+      ]
+    },
+    {
+      "id": "t2_topicattack_deepseek_41017",
+      "table": "T2",
+      "enabled": false,
+      "description": "TopicAttack baseline on qwen3.5-27b.",
+      "cwd": "{injecagent_root}",
+      "budget": {
+        "train_cases": 544,
+        "feedback_rounds": 0,
+        "victim_episodes": 544
+      },
+      "command": [
+        "{project_python}",
+        "src/evaluate_topicattack_baseline.py",
+        "--model_name",
+        "deepseek-v4.1-flash-1017",
+        "--setting",
+        "base",
+        "--prompt_type",
+        "InjecAgent",
+        "--use_cache",
+        "--limit",
+        "{limit}"
+      ]
+    },
+    {
+      "id": "t2_adaptive_deepseek_41017",
+      "table": "T2",
+      "enabled": false,
+      "description": "Adaptive attack with an 8-round trajectory-feedback budget.",
+      "cwd": "{injecagent_root}",
+      "budget": {
+        "train_cases": 544,
+        "feedback_rounds": 8,
+        "victim_episodes": 4352
+      },
+      "command": [
+        "{project_python}",
+        "src/evaluate_adaptive_attack.py",
+        "--model_name",
+        "deepseek-v4.1-flash-1017",
+        "--optimizer_model",
+        "deepseek-v4.1-flash-1017",
+        "--setting",
+        "base",
+        "--prompt_type",
+        "InjecAgent",
+        "--max_rounds",
+        "{max_rounds}",
+        "--use_cache",
+        "--limit",
+        "{limit}"
+      ]
+    },
+    {
+      "id": "t2_ours_attack_deepseek_41017",
+      "table": "T2",
+      "enabled": false,
+      "description": "Evaluate the exported co-evolved poison corpus under no defense.",
+      "cwd": "{injecagent_root}",
+      "budget": {
+        "train_cases": 544,
+        "feedback_rounds": 8,
+        "victim_episodes": 4352
+      },
+      "command": [
+        "{project_python}",
+        "{experiment_root}/scripts/evaluate_exported_poison.py",
+        "--model_name",
+        "deepseek-v4.1-flash-1017",
+        "--poison-source",
+        "{repo_root}/results/aaai27_supplement/table3/full_deepseek-v4.1-flash-1017.jsonl",
+        "--output",
+        "{repo_root}/results/aaai27_supplement/table2/ours_attack_deepseek-v4.1-flash-1017.jsonl",
+        "--limit",
+        "{limit}"
+      ]
+    },
+    {
+      "id": "t3_full_deepseek_41017",
+      "table": "T3",
+      "enabled": false,
+      "description": "Full alternating co-evolution.",
+      "cwd": "{injecagent_root}",
+      "command": [
+        "{project_python}",
+        "{experiment_root}/scripts/run_ablation.py",
+        "--mode",
+        "full",
+        "--model_name",
+        "deepseek-v4.1-flash-1017",
+        "--optimizer_model",
+        "deepseek-v4.1-flash-1017",
+        "--protect_model",
+        "deepseek-v4.1-flash-1017",
+        "--max_rounds",
+        "{max_rounds}",
+        "--limit",
+        "{limit}",
+        "--output",
+        "{repo_root}/results/aaai27_supplement/table3/full_deepseek-v4.1-flash-1017.jsonl"
+      ]
+    },
+    {
+      "id": "t3_train_full632_deepseek_41017",
+      "table": "T3",
+      "enabled": false,
+      "description": "Full alternating co-evolution on the frozen 632-case training split.",
+      "cwd": "{injecagent_root}",
+      "command": [
+        "{project_python}",
+        "{experiment_root}/scripts/run_ablation.py",
+        "--mode",
+        "full",
+        "--model_name",
+        "deepseek-v4.1-flash-1017",
+        "--optimizer_model",
+        "deepseek-v4.1-flash-1017",
+        "--protect_model",
+        "deepseek-v4.1-flash-1017",
+        "--data",
+        "data/splits/train_cases_632.json",
+        "--workers",
+        "8",
+        "--use_cache",
+        "--max_rounds",
+        "{max_rounds}",
+        "--limit",
+        "{limit}",
+        "--output",
+        "{repo_root}/results/aaai27_supplement/artifacts/full_train632_deepseek-v4.1-flash-1017.jsonl"
+      ]
+    },
+    {
+      "id": "t3_fixed_deepseek_41017",
+      "table": "T3",
+      "enabled": false,
+      "description": "Fixed attack and fixed defense.",
+      "cwd": "{injecagent_root}",
+      "command": [
+        "{project_python}",
+        "{experiment_root}/scripts/run_ablation.py",
+        "--mode",
+        "fixed",
+        "--model_name",
+        "deepseek-v4.1-flash-1017",
+        "--optimizer_model",
+        "deepseek-v4.1-flash-1017",
+        "--protect_model",
+        "deepseek-v4.1-flash-1017",
+        "--max_rounds",
+        "{max_rounds}",
+        "--limit",
+        "{limit}",
+        "--output",
+        "{repo_root}/results/aaai27_supplement/table3/fixed_deepseek-v4.1-flash-1017.jsonl"
+      ]
+    },
+    {
+      "id": "t3_attack_only_deepseek_41017",
+      "table": "T3",
+      "enabled": false,
+      "description": "Attack-only optimization.",
+      "cwd": "{injecagent_root}",
+      "command": [
+        "{project_python}",
+        "{experiment_root}/scripts/run_ablation.py",
+        "--mode",
+        "attack_only",
+        "--model_name",
+        "deepseek-v4.1-flash-1017",
+        "--optimizer_model",
+        "deepseek-v4.1-flash-1017",
+        "--protect_model",
+        "deepseek-v4.1-flash-1017",
+        "--max_rounds",
+        "{max_rounds}",
+        "--limit",
+        "{limit}",
+        "--output",
+        "{repo_root}/results/aaai27_supplement/table3/attack_only_deepseek-v4.1-flash-1017.jsonl"
+      ]
+    },
+    {
+      "id": "t3_defense_only_deepseek_41017",
+      "table": "T3",
+      "enabled": false,
+      "description": "Defense-only optimization.",
+      "cwd": "{injecagent_root}",
+      "command": [
+        "{project_python}",
+        "{experiment_root}/scripts/run_ablation.py",
+        "--mode",
+        "defense_only",
+        "--model_name",
+        "deepseek-v4.1-flash-1017",
+        "--optimizer_model",
+        "deepseek-v4.1-flash-1017",
+        "--protect_model",
+        "deepseek-v4.1-flash-1017",
+        "--max_rounds",
+        "{max_rounds}",
+        "--limit",
+        "{limit}",
+        "--output",
+        "{repo_root}/results/aaai27_supplement/table3/defense_only_deepseek-v4.1-flash-1017.jsonl"
+      ]
+    },
+    {
+      "id": "t3_independent_deepseek_41017",
+      "table": "T3",
+      "enabled": false,
+      "description": "Independent attack and defense optimization.",
+      "cwd": "{injecagent_root}",
+      "command": [
+        "{project_python}",
+        "{experiment_root}/scripts/run_ablation.py",
+        "--mode",
+        "independent",
+        "--model_name",
+        "deepseek-v4.1-flash-1017",
+        "--optimizer_model",
+        "deepseek-v4.1-flash-1017",
+        "--protect_model",
+        "deepseek-v4.1-flash-1017",
+        "--max_rounds",
+        "{max_rounds}",
+        "--limit",
+        "{limit}",
+        "--output",
+        "{repo_root}/results/aaai27_supplement/table3/independent_deepseek-v4.1-flash-1017.jsonl"
+      ]
+    }
+  ]
+}

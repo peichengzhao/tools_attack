@@ -41,6 +41,9 @@ def main(params):
     with open(test_case_file, 'r') as f:
         data = json.load(f)
 
+    if params.get("limit", 0) > 0:
+        data = data[: params["limit"]]
+
     if params['use_cache']:
         existing_data_step1 = {}
         if os.path.exists(output_file):

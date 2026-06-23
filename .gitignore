@@ -1,0 +1,52 @@
+# Secrets and local model configuration
+.env
+*.env
+model_api_ablation.py
+model_api_secret.py
+tools_attack_model_config.py
+
+# Python environments and caches
+.venvs/
+**/.venv/
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Runtime outputs and large generated artifacts
+results/
+exp7/results/
+exp7/agentbench/generated_configs/
+InjecAgent/results/
+InjecAgent/data/cross_eval/offline_poison/
+experiments/aaai27_supplement/*.zip
+outputs/
+
+# Downloaded benchmark repositories and datasets
+related_work/AgentBench/
+related_work/appworld/
+related_work/ASB/
+related_work/AutoInject/
+related_work/ChatInject/
+related_work/AdaptiveAttackAgent/
+related_work/topicattack/
+related_work/agentdojo/
+
+# Temporary/editor files
+*.bak
+*.bak-*
+*.log
+*.aux
+*.out
+*.toc
+.DS_Store
+._*
+
+# Local paper sources and staging
+paper/
+/data/
+test.aux
+test.log
+texput.log

@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "baselines": {
+    "task_shield": {
+      "display_name": "Task Shield",
+      "source_url": "https://github.com/cxkc19519-bot/task_shield",
+      "commit": "aacac09bd9c652b3bd707df2e156cb684ae3f0a8",
+      "provenance": "third_party_reproduction",
+      "repo_dir": "related_work/baselines/task_shield",
+      "benchmarks": [
+        "agentdojo"
+      ],
+      "entrypoints": [
+        "task_shield/task_shield_pipeline.py",
+        "scripts/run_benchmark.py"
+      ],
+      "runner": "agentdojo_task_shield",
+      "notes": "Third-party reproduction of the Task Shield paper; not the authors' official repository."
+    },
+    "melon": {
+      "display_name": "MELON",
+      "source_url": "https://github.com/kaijiezhu11/MELON",
+      "commit": "4d3cc9c0175cc26332aac696ac5556c3f85a5e8e",
+      "provenance": "official",
+      "repo_dir": "related_work/baselines/MELON",
+      "benchmarks": [
+        "agentdojo"
+      ],
+      "entrypoints": [
+        "pi_detector.py"
+      ],
+      "runner": "agentdojo_melon",
+      "notes": "Official ICML 2025 implementation. The official detector requires an OpenAI-compatible embeddings endpoint."
+    },
+    "camel": {
+      "display_name": "CaMeL",
+      "source_url": "https://github.com/google-research/camel-prompt-injection",
+      "commit": "f083b6b396399d3b3c7f2ddaf613a5945eaf32d8",
+      "provenance": "official_research_artifact",
+      "repo_dir": "related_work/baselines/camel-prompt-injection",
+      "benchmarks": [
+        "agentdojo"
+      ],
+      "entrypoints": [
+        "main.py",
+        "src/camel/models.py"
+      ],
+      "runner": "agentdojo_camel",
+      "notes": "Official Google Research artifact. Its README explicitly warns that the interpreter is experimental."
+    },
+    "piarena": {
+      "display_name": "PIArena",
+      "source_url": "https://github.com/sleeepeer/PIArena",
+      "commit": "8bd7a89e4a88d64b8354d9aa80a684923be6b795",
+      "provenance": "official",
+      "repo_dir": "related_work/baselines/PIArena",
+      "benchmarks": [
+        "injecagent"
+      ],
+      "entrypoints": [
+        "main_injecagent.py",
+        "piarena/defenses/__init__.py"
+      ],
+      "runner": "injecagent_piarena",
+      "representative_defense": "pisanitizer",
+      "selection_rationale": "PIArena is a platform rather than one defense. PISanitizer is selected as the representative prevention defense because it is the defense used in PIArena's official example experiment configuration and provides a balanced ASR/utility tradeoff rather than the near-zero-utility behavior of an aggressive detector.",
+      "notes": "Official PIArena implementation. The representative PISanitizer baseline requires local Hugging Face weights and GPU memory."
+    }
+  }
+}
