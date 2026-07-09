@@ -213,7 +213,7 @@ static `max_defense`:
 
 ```bash
 python scripts/run_clean_utility.py \
-  --selected-harness ../../results/aaai27_supplement/artifacts/selected_harness.json \
+  --selected-harness artifacts/selected_harness.json \
   --models gpt-5.5,deepseek-v4-flash,glm-5.1 \
   --benchmarks agentdojo,injecagent,bfcl,agentbench,appworld
 ```
@@ -231,8 +231,8 @@ This patch propagates `TOOLS_ATTACK_HARNESS_STRATEGY_FILE` into:
 ```bash
 python scripts/evaluate_cross_combinations.py \
   --test-data ../../InjecAgent/data/splits/test_cases_211.json \
-  --evolved-attacks ../../results/aaai27_supplement/artifacts/test_gstar_deepseek-v4.1-flash-1017.jsonl \
-  --selected-harness ../../results/aaai27_supplement/artifacts/selected_harness.json \
+  --evolved-attacks artifacts/frozen_test_attack_211.jsonl \
+  --selected-harness artifacts/selected_harness.json \
   --output-dir ../../results/aaai27_supplement/table3_cross
 ```
 
@@ -392,6 +392,17 @@ Both artifact builders support `--round-limit N`, so `G*_N` and `EHar_N` can be
 constructed from the same stored 8-round trajectories without retraining.
 
 ## Verification
+
+The small frozen artifacts needed for held-out reproduction are tracked under:
+
+```text
+artifacts/
+  frozen_test_attack_211.jsonl
+  selected_harness.json
+  MANIFEST.json
+```
+
+Their SHA-256 hashes are recorded in `artifacts/MANIFEST.json`.
 
 After the pipeline:
 

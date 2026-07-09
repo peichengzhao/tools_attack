@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "description": "Frozen held-out attack payloads and validation-selected defense harness for AAAI-27 supplement experiments.",
+  "source_run": "deepseek-v4.1-flash-1017",
+  "test_cases": 211,
+  "files": {
+    "frozen_test_attack_211.jsonl": {
+      "sha256": "7f73d05963b05c799e650cf70c027a09e48722b2c312f6fbaf54c72af1850aaf",
+      "records": 211,
+      "source": "results/aaai27_supplement/artifacts/test_gstar_deepseek-v4.1-flash-1017.jsonl"
+    },
+    "selected_harness.json": {
+      "sha256": "b0393a15f8b7b6799dab7f3adde83159c5698a471336f297ddc976fc27cf5b79",
+      "source": "results/aaai27_supplement/artifacts/selected_harness.json"
+    }
+  }
+}

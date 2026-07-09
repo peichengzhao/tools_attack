@@ -21,6 +21,9 @@ jobs:
       - name: Repository hygiene
         run: python scripts/check_repository.py
 
+      - name: Reproducibility audit
+        run: python experiments/aaai27_supplement/scripts/reproducibility_audit.py
+
       - name: Unit tests
         working-directory: experiments/aaai27_supplement
         run: python -m unittest discover -s tests -v

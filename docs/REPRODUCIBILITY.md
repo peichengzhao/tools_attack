@@ -74,7 +74,7 @@ python src/evaluate_cross_eval.py \
   --defense none \
   --attack all \
   --test_data data/splits/test_cases_211.json \
-  --ours_attacks ../results/aaai27_supplement/artifacts/test_gstar_deepseek-v4.1-flash-1017.jsonl \
+  --ours_attacks ../experiments/aaai27_supplement/artifacts/frozen_test_attack_211.jsonl \
   --setting base \
   --prompt_type InjecAgent
 ```
@@ -105,7 +105,7 @@ python src/evaluate_cross_eval.py \
   --defense sandwich \
   --attack all \
   --test_data data/splits/test_cases_211.json \
-  --ours_attacks ../results/aaai27_supplement/artifacts/test_gstar_deepseek-v4.1-flash-1017.jsonl \
+  --ours_attacks ../experiments/aaai27_supplement/artifacts/frozen_test_attack_211.jsonl \
   --setting base \
   --prompt_type InjecAgent
 ```
@@ -118,8 +118,8 @@ python src/evaluate_cross_eval.py \
   --defense ours \
   --attack all \
   --test_data data/splits/test_cases_211.json \
-  --harness_file ../results/aaai27_supplement/artifacts/selected_harness.json \
-  --ours_attacks ../results/aaai27_supplement/artifacts/test_gstar_deepseek-v4.1-flash-1017.jsonl \
+  --harness_file ../experiments/aaai27_supplement/artifacts/selected_harness.json \
+  --ours_attacks ../experiments/aaai27_supplement/artifacts/frozen_test_attack_211.jsonl \
   --setting base \
   --prompt_type InjecAgent
 ```
@@ -131,7 +131,7 @@ Clean suites:
 ```bash
 cd experiments/aaai27_supplement
 python scripts/run_clean_utility.py \
-  --selected-harness ../../results/aaai27_supplement/artifacts/selected_harness.json \
+  --selected-harness artifacts/selected_harness.json \
   --models gpt-5.5,deepseek-v4-flash,glm-5.1 \
   --benchmarks agentdojo,injecagent,bfcl,agentbench,appworld
 ```
@@ -141,8 +141,8 @@ Artifact combinations:
 ```bash
 python scripts/evaluate_cross_combinations.py \
   --test-data ../../InjecAgent/data/splits/test_cases_211.json \
-  --evolved-attacks ../../results/aaai27_supplement/artifacts/test_gstar_deepseek-v4.1-flash-1017.jsonl \
-  --selected-harness ../../results/aaai27_supplement/artifacts/selected_harness.json \
+  --evolved-attacks artifacts/frozen_test_attack_211.jsonl \
+  --selected-harness artifacts/selected_harness.json \
   --output-dir ../../results/aaai27_supplement/table3_cross
 ```
 

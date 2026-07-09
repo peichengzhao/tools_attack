@@ -96,8 +96,8 @@ cd /home/zpc/model_attack/new_try/tools_attack/InjecAgent
   --defense ours \
   --attack all \
   --test_data data/splits/test_cases_211.json \
-  --harness_file ../results/aaai27_supplement/artifacts/selected_harness.json \
-  --ours_attacks ../results/aaai27_supplement/artifacts/test_gstar_deepseek-v4.1-flash-1017.jsonl \
+  --harness_file ../experiments/aaai27_supplement/artifacts/selected_harness.json \
+  --ours_attacks ../experiments/aaai27_supplement/artifacts/frozen_test_attack_211.jsonl \
   --setting base \
   --prompt_type InjecAgent
 ```
@@ -110,7 +110,7 @@ Table 1 no-defense grid:
   --defense none \
   --attack all \
   --test_data data/splits/test_cases_211.json \
-  --ours_attacks ../results/aaai27_supplement/artifacts/test_gstar_deepseek-v4.1-flash-1017.jsonl \
+  --ours_attacks ../experiments/aaai27_supplement/artifacts/frozen_test_attack_211.jsonl \
   --setting base \
   --prompt_type InjecAgent
 ```

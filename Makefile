@@ -1,8 +1,8 @@
 PYTHON ?= python3
 
-.PHONY: ci check-repository test compile dry-run baseline-check benchmark-check
+.PHONY: ci check-repository test compile audit dry-run baseline-check benchmark-check
 
-ci: check-repository test compile
+ci: check-repository audit test compile
 
 check-repository:
 	$(PYTHON) scripts/check_repository.py
@@ -12,6 +12,9 @@ test:
 
 compile:
 	$(PYTHON) -m compileall -q InjecAgent/src exp7 experiments/aaai27_supplement scripts
+
+audit:
+	$(PYTHON) experiments/aaai27_supplement/scripts/reproducibility_audit.py
 
 dry-run:
 	cd experiments/aaai27_supplement && \

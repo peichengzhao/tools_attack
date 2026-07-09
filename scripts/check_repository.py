@@ -20,6 +20,12 @@ REQUIRED = (
     "THIRD_PARTY_NOTICES.md",
     "docs/ARCHITECTURE.md",
     "docs/REPRODUCIBILITY.md",
+    "docs/PAPER_TABLE_MAP.md",
+    "docs/INSPECTION_GUIDE.md",
+    "REPRODUCIBILITY_STATUS.md",
+    "experiments/aaai27_supplement/artifacts/MANIFEST.json",
+    "experiments/aaai27_supplement/artifacts/frozen_test_attack_211.jsonl",
+    "experiments/aaai27_supplement/artifacts/selected_harness.json",
     "experiments/aaai27_supplement/README.md",
     "experiments/aaai27_supplement/PAPER_METHOD_COVERAGE.md",
 )
@@ -119,6 +125,7 @@ def main() -> int:
         "experiments/aaai27_supplement/configs/experiments.json",
         "experiments/aaai27_supplement/configs/interactive_baselines.json",
         "InjecAgent/data/cross_eval/cell_manifest.json",
+        "experiments/aaai27_supplement/artifacts/MANIFEST.json",
     ):
         path = ROOT / name
         try:

@@ -17,6 +17,10 @@ of external defense baselines.
 > evaluation. Do not use the attack artifacts against systems without
 > permission.
 
+For a quick review path, see
+[`docs/INSPECTION_GUIDE.md`](docs/INSPECTION_GUIDE.md) and the generated
+[`REPRODUCIBILITY_STATUS.md`](REPRODUCIBILITY_STATUS.md).
+
 ## Repository Layout
 
 ```text
@@ -81,6 +85,7 @@ python3 -m pip install -r InjecAgent/requirements.txt
 make check-repository
 make test
 make compile
+make audit
 make dry-run
 ```
 
@@ -89,6 +94,20 @@ The dry-run commands do not call a model API.
 ## Reproducibility
 
 Detailed commands are in [`docs/REPRODUCIBILITY.md`](docs/REPRODUCIBILITY.md).
+The table-to-code map is in [`docs/PAPER_TABLE_MAP.md`](docs/PAPER_TABLE_MAP.md).
+Reviewers can start with [`docs/INSPECTION_GUIDE.md`](docs/INSPECTION_GUIDE.md).
+
+Tracked frozen artifacts:
+
+```text
+experiments/aaai27_supplement/artifacts/
+  frozen_test_attack_211.jsonl
+  selected_harness.json
+  MANIFEST.json
+```
+
+These allow the held-out Ours-Attack row and Ours defense column to start
+without retraining. SHA-256 hashes are recorded in `MANIFEST.json`.
 
 Typical validation:
 
@@ -108,7 +127,7 @@ python src/evaluate_cross_eval.py \
   --setting base \
   --prompt_type InjecAgent \
   --test_data data/splits/test_cases_211.json \
-  --ours_attacks ../results/aaai27_supplement/artifacts/test_gstar_deepseek-v4.1-flash-1017.jsonl
+  --ours_attacks ../experiments/aaai27_supplement/artifacts/frozen_test_attack_211.jsonl
 ```
 
 This validates the Table 2 grid:
