@@ -30,15 +30,14 @@ Expected:
 12 tests passed
 ```
 
-### 3. Paper-level readiness
+### 3. Reproduction contract
 
 ```bash
 python experiments/aaai27_supplement/scripts/reproducibility_audit.py
 ```
 
 This checks split hashes, tracked artifacts, the 225-cell cross-evaluation
-contract, baseline commits, Adaptive Attack coverage, benchmark environments,
-and interactive-baseline plans. It does not call a model API.
+manifest, and pinned baseline commits. It does not call a model API.
 
 ### 4. Artifact integrity
 
@@ -61,27 +60,17 @@ make dry-run
 - Table 3 artifact-combination command generation.
 - Unit tests and repository hygiene.
 
-## Resources Needed for Full Execution
+## Runtime Prerequisites
 
 | Requirement | Used by |
 |---|---|
 | OpenAI-compatible endpoint | All model-backed runs |
-| Per-victim Adaptive caches | Adaptive Attack row |
-| Per-victim harnesses | Complete Ours column |
+| Per-victim Adaptive artifacts | Adaptive Attack row |
+| Per-victim harnesses | Ours column |
 | Docker workers | AgentBench clean utility |
 | AppWorld Python 3.11 environment | AppWorld clean utility |
 | BFCL CLI | BFCL clean utility |
 | PIArena model weights | PISanitizer baseline |
-
-## Expected Non-Fatal Warnings
-
-- Adaptive cache coverage is incomplete for most victim models.
-- AgentBench Docker may be unavailable.
-- BFCL or AppWorld may be absent in a fresh clone.
-- Interactive defense results remain pending until API-backed runs complete.
-
-The repository does not silently replace missing Adaptive artifacts with seed
-attacks.
 
 ## Key Files
 

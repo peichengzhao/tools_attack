@@ -18,8 +18,7 @@ of external defense baselines.
 > permission.
 
 For a quick review path, see
-[`docs/INSPECTION_GUIDE.md`](docs/INSPECTION_GUIDE.md) and the generated
-[`REPRODUCIBILITY_STATUS.md`](REPRODUCIBILITY_STATUS.md).
+[`docs/INSPECTION_GUIDE.md`](docs/INSPECTION_GUIDE.md).
 
 ## Repository Layout
 
@@ -165,18 +164,17 @@ python experiments/aaai27_supplement/scripts/check_external_benchmarks.py
 AgentBench workers require a reachable Docker API. AppWorld uses a separate
 Python 3.11 environment and downloaded task data.
 
-## Known Constraints
+## Runtime Prerequisites
 
-- Adaptive Attack requires frozen per-victim poison artifacts. The upstream
-  AdaptiveAttackAgent repository provides optimization code but no precomputed
-  artifacts for this victim set.
-- InjecAgent-Enhanced is generated deterministically from the official hacking
-  prompt prefix and does not require a cache.
-- The paper's Table 2 requires one validation-selected harness per victim model.
-- AgentBench cannot run on hosts that do not expose a Docker API endpoint.
-- External methods must be described according to their exact provenance. In
-  particular, Task Shield is a third-party reproduction and StruQ/SecAlign are
-  prompt-level adaptations here.
+- Model-backed runs require an OpenAI-compatible endpoint.
+- Adaptive Attack uses per-victim frozen poison artifacts produced by the
+  provided optimizer.
+- InjecAgent-Enhanced is generated from the official hacking-prompt prefix.
+- Table 2 evaluates a validation-selected harness for each victim model.
+- AgentBench requires Docker workers.
+- External methods retain their documented provenance: Task Shield is a
+  third-party reproduction, while StruQ and SecAlign are prompt-level
+  adaptations in this repository.
 
 ## Security
 
