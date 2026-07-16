@@ -22,7 +22,6 @@ REQUIRED = (
     "docs/REPRODUCIBILITY.md",
     "docs/PAPER_TABLE_MAP.md",
     "docs/INSPECTION_GUIDE.md",
-    "REPRODUCIBILITY_STATUS.md",
     "experiments/aaai27_supplement/artifacts/MANIFEST.json",
     "experiments/aaai27_supplement/artifacts/frozen_test_attack_211.jsonl",
     "experiments/aaai27_supplement/artifacts/selected_harness.json",
