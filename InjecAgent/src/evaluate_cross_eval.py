@@ -7,11 +7,19 @@ invalid does NOT count toward ASR.
 
 from __future__ import annotations
 
+import sys
+from pathlib import Path
+
+_INJECAGENT_ROOT = Path(__file__).resolve().parents[1]
+_REPO_ROOT = _INJECAGENT_ROOT.parent
+for _path in (str(_INJECAGENT_ROOT), str(_REPO_ROOT)):
+    if _path not in sys.path:
+        sys.path.insert(0, _path)
+
 import copy
 import json
 import os
 import traceback
-from pathlib import Path
 
 from tqdm import tqdm
 

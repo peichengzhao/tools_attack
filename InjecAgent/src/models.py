@@ -63,7 +63,6 @@ class GPTModel(BaseModel):
             return None
         return content
 
-import together
 class TogetherAIModel(BaseModel): 
     def __init__(self, params):
         super().__init__()  
@@ -79,6 +78,8 @@ class TogetherAIModel(BaseModel):
         return model_input
     
     def call_model(self, model_input, retries=3, delay=2, max_tokens =512):
+        import together
+
         attempt = 0
         while attempt < retries:
             try:
