@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this repository in academic work, please cite the associated paper and repository."
+title: "Co-Evolving Poison Text and Defense Harnesses for Indirect Prompt Injection"
+type: software
+authors:
+  - family-names: "Zhao"
+    given-names: "Peicheng"
+repository-code: "https://github.com/peichengzhao/tools_attack"
+url: "https://github.com/peichengzhao/tools_attack"
+version: "1.4.1"
+date-released: "2026-07-24"
+abstract: >-
+  Research code for bilateral co-evolution of indirect prompt-injection poison
+  text and defense harnesses in tool-integrated LLM agents.
+keywords:
+  - prompt injection
+  - LLM agents
+  - agent security
+  - reproducibility

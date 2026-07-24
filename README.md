@@ -1,5 +1,9 @@
 # Co-Evolving Poison Text and Defense Harnesses
 
+[![Repository checks](https://github.com/peichengzhao/tools_attack/actions/workflows/ci.yml/badge.svg)](https://github.com/peichengzhao/tools_attack/actions/workflows/ci.yml)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue)](https://www.python.org/)
+[![Version](https://img.shields.io/badge/version-1.4.1-informational)](CHANGELOG.md)
+
 Research code for evaluating indirect prompt injection (IPI) in tool-integrated
 LLM agents under bilateral attack-defense co-evolution.
 
@@ -185,6 +189,20 @@ Python 3.11 environment and downloaded task data.
   generated files, and disallowed large artifacts.
 
 See [`SECURITY.md`](SECURITY.md).
+
+## Citation
+
+GitHub can render the repository citation from
+[`CITATION.cff`](CITATION.cff). If you use the code, cite the associated paper
+and the repository URL.
+
+## Support and Community
+
+- Reproduction questions: [`SUPPORT.md`](SUPPORT.md)
+- Common setup questions: [`docs/FAQ.md`](docs/FAQ.md)
+- Issue templates: [`.github/ISSUE_TEMPLATE/`](.github/ISSUE_TEMPLATE/)
+- Contribution guide: [`CONTRIBUTING.md`](CONTRIBUTING.md)
+- Community expectations: [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md)
 
 ## Third-Party Code and Licensing
 
