@@ -1,0 +1,42 @@
+name: Reproducibility issue
+description: Report a mismatch between documented and observed experiment behavior.
+title: "[Reproducibility]: "
+labels:
+  - reproducibility
+body:
+  - type: input
+    id: table
+    attributes:
+      label: Affected table or experiment
+      placeholder: Table 1, Table 2, Table 3, baseline, clean utility
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Python version, model endpoint type, benchmark environment, and commit.
+    validations:
+      required: true
+  - type: textarea
+    id: command
+    attributes:
+      label: Command
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: Observed output
+      description: Remove secrets and private data.
+      render: text
+  - type: dropdown
+    id: artifact
+    attributes:
+      label: Which artifact was used?
+      options:
+        - frozen_test_attack_211.jsonl
+        - selected_harness.json
+        - regenerated locally
+        - other
