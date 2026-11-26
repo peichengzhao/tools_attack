@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Validate vendored baseline source, provenance, and entrypoints."""
+"""Validate vendored baseline source, provenance, and entrypoints.
+
+Checks the supplementary MELON, CaMeL, PIArena, and Task Shield snapshots.
+"""
 
 from __future__ import annotations
 

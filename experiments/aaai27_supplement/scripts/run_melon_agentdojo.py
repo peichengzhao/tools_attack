@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""AgentDojo runner using the official MELON detector from the vendored source."""
+"""AgentDojo runner using the official MELON detector from the vendored source.
+
+Supplementary baseline, outside paper Tables 1–3.
+"""
 
 from __future__ import annotations
 

@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""AgentDojo runner for the vendored Task Shield reproduction."""
+"""AgentDojo runner for the vendored Task Shield reproduction.
+
+Supplementary baseline, outside paper Tables 1–3.
+"""
 
 from __future__ import annotations
 

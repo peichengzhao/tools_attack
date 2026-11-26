@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Run a PIArena defense on the paper's 211-case InjecAgent DS split."""
+"""Run a PIArena defense on the paper's 211-case InjecAgent DS split.
+
+Supplementary baseline, outside paper Tables 1–3.
+"""
 
 from __future__ import annotations
 

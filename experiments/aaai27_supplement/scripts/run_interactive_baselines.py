@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Plan or execute the separate interactive-defense baseline table."""
+"""Plan or execute the separate interactive-defense baseline table.
+
+Task Shield, MELON, and CaMeL are supplementary to paper Tables 1–3.
+"""
 
 from __future__ import annotations
 

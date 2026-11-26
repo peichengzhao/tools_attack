@@ -1,4 +1,7 @@
-"""Registry and validation helpers for external defense baselines."""
+"""Registry and validation helpers for external defense baselines.
+
+Used by the supplementary MELON, CaMeL, PIArena, and Task Shield runners.
+"""
 
 from __future__ import annotations
 

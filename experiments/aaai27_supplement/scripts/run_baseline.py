@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Launch a vendored defense baseline with a recorded, inspectable command."""
+"""Launch a vendored defense baseline with a recorded, inspectable command.
+
+MELON, CaMeL, PIArena, and Task Shield sit outside paper Tables 1–3.
+"""
 
 from __future__ import annotations
 

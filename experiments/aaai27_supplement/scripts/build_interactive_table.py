@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Build the separate Task Shield/MELON/CaMeL interactive-defense table."""
+"""Build the separate Task Shield/MELON/CaMeL interactive-defense table.
+
+Supplementary table, outside paper Tables 1–3.
+"""
 
 from __future__ import annotations
 
